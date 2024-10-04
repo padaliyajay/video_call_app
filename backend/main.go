@@ -22,6 +22,7 @@ func main() {
 	var port = "8000"
 
 	flag.StringVar(&port, "port", port, "Port to run the server on")
+	flag.Parse()
 
 	hub := socketconsumer.NewHub(upgrader)
 	r := gin.Default()
