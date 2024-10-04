@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"net/http"
 
 	"example.com/video_call_app/consumer"
@@ -18,6 +19,10 @@ var upgrader = websocket.Upgrader{
 }
 
 func main() {
+	var port = "8000"
+
+	flag.StringVar(&port, "port", port, "Port to run the server on")
+
 	hub := socketconsumer.NewHub(upgrader)
 	r := gin.Default()
 
@@ -27,5 +32,5 @@ func main() {
 
 	r.GET("/ws/call/:dial_code", consumer.ServeCallConsumer(hub))
 
-	r.Run(":8000")
+	r.Run(":" + port)
 }

@@ -1,0 +1,14 @@
+[Unit]
+Description=Maza WebRTC
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/usr/local/src/video_call_app/backend/video_call_app -port=8056
+
+[Install]
+WantedBy=multi-user.target
