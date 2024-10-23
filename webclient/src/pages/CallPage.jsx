@@ -27,10 +27,10 @@ function CallPage() {
       <div className="col-span-3 bg-gray-800 text-white h-screen relative">
         <UserVideo remote={true} />
         <UserAudio />
-        <div className="absolute bottom-1 left-1/2 -translate-x-1/2">
+        <div className="absolute bottom-1 left-1/2 -translate-x-1/2 z-50">
           <ActionBar />
         </div>
-        <UserVideo className="fixed bottom-3 right-3 aspect-video lg:hidden w-32 h-32 rounded-md" />
+        <UserVideo className="fixed bottom-20 right-3 aspect-video lg:hidden !w-32 !h-32 rounded-md" />
       </div>
     </div>
   );
